@@ -10,4 +10,4 @@ function Cart(){
         <p>Total : {prixmonstera + prixlierre + prixbouquet} euros</p></div>)
   }
 
-  export default Cart 
+  export default Cart
