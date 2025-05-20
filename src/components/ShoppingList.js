@@ -1,5 +1,6 @@
+
 import { plantList } from '../data/plantList'
-import PlantItem from './PlantItem'
+import CareScale from './CareScale'
 import '../styles/ShoppingList.css'
 
 function ShoppingList() {
@@ -7,7 +8,7 @@ function ShoppingList() {
 		(acc, plant) =>
 			acc.includes(plant.category) ? acc : acc.concat(plant.category),
 		[]
-    )
+	)
 
 	return (
 		<div>
@@ -17,14 +18,13 @@ function ShoppingList() {
 				))}
 			</ul>
 			<ul className='lmj-plant-list'>
-				{plantList.map(({ id, cover, name, water, light }) => (
-					<PlantItem
-						id={id}
-						cover={cover}
-						name={name}
-						water={water}
-						light={light}
-					/>
+				{plantList.map((plant) => (
+					<li key={plant.id} className='lmj-plant-item'>
+						{plant.isBestSale && <span>🔥</span>}
+						{plant.name}
+						<CareScale careType='water' scaleValue={plant.water} />
+						<CareScale careType='light' scaleValue={plant.light} />
+					</li>
 				))}
 			</ul>
 		</div>
