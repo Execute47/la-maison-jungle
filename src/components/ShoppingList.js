@@ -18,7 +18,7 @@ function ShoppingList() {
         ))}
       </ul>
 
-      <div className="plant-list">
+      <div className="lmj-plant-list">
         {plantList.map((plant) => (
           <PlantItem
             key={plant.id}

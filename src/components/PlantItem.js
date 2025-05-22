@@ -13,7 +13,6 @@ function PlantItem(
     <li key={id} className="lmj-plant-item">
       <img className="lmj-plant-item-cover" src={cover} alt={name} />
       <span>{name}</span>
-      <span>{id}</span>
       <CareScale careType="water" scaleValue={water} />
       <CareScale careType="light" scaleValue={light} />
     </li>
