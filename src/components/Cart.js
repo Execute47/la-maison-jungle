@@ -1,16 +1,22 @@
+import React from 'react';
+
 import '../styles/Cart.css'
 
 function Cart() {
-    let prixmonstera = 8;
-    let prixlierre = 10;
-    let prixbouquet = 15;
-    return (<div className ='lmj-cart'>
-        <h1>Panier</h1>
-        <ul><li>Monstera : {prixmonstera} euros</li>
-            <li>Lierre : {prixlierre} euros</li>
-            <li>Bouquet de fleurs : {prixbouquet} euros</li>
-        </ul>
-        <p>Total : {prixmonstera + prixlierre + prixbouquet} euros</p></div>)
-  }
+    const monsteraPrice = 8
+    const ivyPrice = 10
+    const flowerPrice = 15
+    return (
+        <div className='lmj-cart'>
+            <h2>Panier</h2>
+            <ul>
+                <li>Monstera : {monsteraPrice}€</li>
+                <li>Lierre : {ivyPrice}€</li>
+                <li>Fleurs : {flowerPrice}€</li>
+            </ul>
+            Total : {monsteraPrice + ivyPrice + flowerPrice}€
+        </div>
+    )
+}
 
-  export default Cart
+export default Cart
