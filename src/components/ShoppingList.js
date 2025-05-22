@@ -1,6 +1,5 @@
-
 import { plantList } from '../data/plantList'
-import CareScale from './CareScale'
+import PlantItem from './PlantItem'
 import '../styles/ShoppingList.css'
 
 function ShoppingList() {
@@ -9,25 +8,28 @@ function ShoppingList() {
 			acc.includes(plant.category) ? acc : acc.concat(plant.category),
 		[]
 	)
-
+	
 	return (
-		<div>
-			<ul>
-				{categories.map((cat) => (
-					<li key={cat}>{cat}</li>
-				))}
-			</ul>
-			<ul className='lmj-plant-list'>
-				{plantList.map((plant) => (
-					<li key={plant.id} className='lmj-plant-item'>
-						{plant.isBestSale && <span>🔥</span>}
-						{plant.name}
-						<CareScale careType='water' scaleValue={plant.water} />
-						<CareScale careType='light' scaleValue={plant.light} />
-					</li>
-				))}
-			</ul>
+	<>
+		//Afficher la liste des catégories
+		<ul>
+			{categories.map((cat) => (
+			<li key={cat}>{cat}</li>
+			))}
+		</ul>
+
+		//Afficher un PlantItem pour chaque plante
+		<div className="plant-list">
+			<PlantItem 
+				key={plant.id}
+				name={plant.name}
+				id={plant.id}
+				cover={plant.cover}
+				water={plant.water}
+				light={plant.light}
+			/>
 		</div>
+	</>
 	)
 }
 
